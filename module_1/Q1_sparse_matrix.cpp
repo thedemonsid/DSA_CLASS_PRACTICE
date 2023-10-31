@@ -35,20 +35,38 @@ vector <vector<int>> add(vector<vector<int>>a,vector<vector<int>>b){
         temp1.push_back(a[0][1]);
         temp1.push_back(0);
         c.push_back(temp1);
-        for(int i=0;i<a.size();i++){
-                if(a[i][0]==b[i][0]&&a[i][1]==b[i][1]){
+        int i=1,j=1;
+        while(i<a.size()&&j<b.size()){
+            if(a[i][0]<b[j][0]){
+                c.push_back(a[i]);
+                i++;
+            }
+            else if(a[i][0]>b[j][0]){
+                c.push_back(b[j]);
+                j++;
+            }
+            else{
+                if(a[i][1]<b[j][1]){
+                    c.push_back(a[i]);
+                    c[0][2]++;
+                    i++;
+                }
+                else if(a[i][1]>b[j][1]){
+                    c.push_back(b[j]);
+                    c[0][2]++;
+                    j++;
+                }
+                else{
                     vector<int>temp;
                     temp.push_back(a[i][0]);
                     temp.push_back(a[i][1]);
-                    temp.push_back(a[i][2]+b[i][2]);
+                    temp.push_back(a[i][2]+b[j][2]);
                     c.push_back(temp);
-                    c[0][2]+=1;
+                    c[0][2]++;
+                    i++;
+                    j++;
                 }
-                else {
-                    c.push_back(a[i]);
-                    c.push_back(b[i]);
-                    c[0][2]+=2;
-                }
+            }
         }
         sort(c.begin()+1,c.end());
         return c;
