@@ -62,7 +62,21 @@ node* derivative(node* head) {
     }
     return head;
 }
-
+//function to multiply two polynomials
+node* multiply(node* head1, node* head2) {
+    node* curr1 = head1;
+    node* curr2 = head2;
+    node* head3 = NULL;
+    while (curr1 != NULL) {
+        while (curr2 != NULL) {
+            addElement(head3, curr1->coef * curr2->coef, curr1->exp + curr2->exp);
+            curr2 = curr2->next;
+        }
+        curr2 = head2;
+        curr1 = curr1->next;
+    }
+    return head3;
+}
 //function to display linked list
 void display(node* head) {
     node* curr = head;
@@ -93,6 +107,6 @@ display(p2);
 
 node * p3 = add(p1,p2);
 display(p3);
-p3=derivative(p3);
+p3=multiply(p1,p2);
 display(p3);
 }
