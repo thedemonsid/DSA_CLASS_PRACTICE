@@ -71,6 +71,48 @@ vector <vector<int>> add(vector<vector<int>>a,vector<vector<int>>b){
         sort(c.begin()+1,c.end());
         return c;
 }
+//function to multiply two sparse matrix
+vector<vector<int>>multiply(vector<vector<int>>a,vector<vector<int>>b){
+    if(a[0][1]!=b[0][0]){
+        cout<<"Invalid matrix";
+        return {};
+    }
+    vector<vector<int>>c;
+    vector<int>temp1;
+    temp1.push_back(a[0][0]);
+    temp1.push_back(b[0][1]);
+    temp1.push_back(0);
+    c.push_back(temp1);
+    int i=1,j=1;
+    while(i<a.size()&&j<b.size()){
+        if(a[i][0]<b[j][0]){
+            i++;
+        }
+        else if(a[i][0]>b[j][0]){
+            j++;
+        }
+        else{
+            if(a[i][1]<b[j][1]){
+                i++;
+            }
+            else if(a[i][1]>b[j][1]){
+                j++;
+            }
+            else{
+                vector<int>temp;
+                temp.push_back(a[i][0]);
+                temp.push_back(b[j][1]);
+                temp.push_back(a[i][2]*b[j][2]);
+                c.push_back(temp);
+                c[0][2]++;
+                i++;
+                j++;
+            }
+        }
+    }
+    sort(c.begin()+1,c.end());
+    return c;
+}
 // Function to display the sparse matrix
 void display(vector<vector<int>>sparse_matrix){
     for(int i=0;i<sparse_matrix.size();i++){
@@ -87,6 +129,9 @@ int main(){
     vector<vector<int>>sparse_matrix2=create(matrix2);
 
 vector<vector<int>>sparse_matrix3=add(sparse_matrix1,sparse_matrix2);
+display(sparse_matrix3);
+cout<<endl;
+sparse_matrix3=multiply(sparse_matrix1,sparse_matrix2);
 display(sparse_matrix3);
      return 0;
 }
