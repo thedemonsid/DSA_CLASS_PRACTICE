@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 // function for counting sort
-void count_sort(vector<int> a)
+vector <int> count_sort(vector<int> a)
 {
     int n = a.size();
     int max = *max_element(a.begin(), a.end());
@@ -19,11 +19,7 @@ void count_sort(vector<int> a)
             count[i]--;
         }
     }
-    for (int i = 0; i < n; i++)
-    {
-        cout << output[i] << " ";
-    }
-    cout<<"\n"; 
+    return output;
 }
 int main()
 {
@@ -36,6 +32,9 @@ int main()
     {
         cin >> a[i];
     }
-    count_sort(a);
+    vector<int>ans=count_sort(a);
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
     return 0;
 }
