@@ -69,6 +69,22 @@ int * merge(int *a,int a1,int *b,int b1){
     }
     return ans;
 }
+//merge function using maps nlog(n) time complexity
+int * merge_maps(int a[],int a1,int b[],int b1){
+    map<int,bool>mp;
+    for(int i=0;i<a1;i++){
+       mp[a[i]]=true;
+    }
+    for(int i=0;i<b1;i++){
+       mp[b[i]]=true;
+    }
+    int *ans=new int[a1+b1];
+    int i=0;
+    for(auto & str : mp){
+        ans[i++]= str.first;
+    }
+    return ans;
+}
 //Test cases for merge function
 void testMerge() {
     // Test case 1
@@ -104,22 +120,6 @@ void testMerge() {
         delete[] merged;
     }
       cout << "All test cases passed for merge.\n";
-}
-//merge function using maps nlog(n) time complexity
-int * merge_maps(int a[],int a1,int b[],int b1){
-    map<int,bool>mp;
-    for(int i=0;i<a1;i++){
-       mp[a[i]]=true;
-    }
-    for(int i=0;i<b1;i++){
-       mp[b[i]]=true;
-    }
-    int *ans=new int[a1+b1];
-    int i=0;
-    for(auto & str : mp){
-        ans[i++]= str.first;
-    }
-    return ans;
 }
 //function to test merge_maps function
 void testMergeMaps() {
@@ -162,8 +162,76 @@ void testMergeMaps() {
     cout << "All test cases passed for merge_maps.\n";
 }
 
+// Test function for insertion sort
+void testInsertionSort() {
+    // Test case 1
+    {
+        int a[5] = {5, 4, 3, 2, 1};
+        insertion_sort(a, 5);
+        for (int i = 0; i < 5; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 2
+    {
+        int a[3] = {3, 1, 2};
+        insertion_sort(a, 3);
+        for (int i = 0; i < 3; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+    cout << "All test cases passed for insertion_sort.\n";
+}
+
+// Test function for bubble sort
+void testBubbleSort() {
+    // Test case 1
+    {
+        int a[5] = {5, 4, 3, 2, 1};
+        bubble_sort(a, 5);
+        for (int i = 0; i < 5; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 2
+    {
+        int a[3] = {3, 1, 2};
+        bubble_sort(a, 3);
+        for (int i = 0; i < 3; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+    cout << "All test cases passed for bubble_sort.\n";
+}
+
+// Test function for selection sort
+void testSelectionSort() {
+    // Test case 1
+    {
+        int a[5] = {5, 4, 3, 2, 1};
+        selection_sort(a, 5);
+        for (int i = 0; i < 5; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 2
+    {
+        int a[3] = {3, 1, 2};
+        selection_sort(a, 3);
+        for (int i = 0; i < 3; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+    cout << "All test cases passed for selection_sort.\n";
+}
 
 int main(){
   testMerge();
   testMergeMaps();
+  testInsertionSort();
+  testBubbleSort();
+  testSelectionSort();
 }
