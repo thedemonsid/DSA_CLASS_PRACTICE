@@ -103,9 +103,67 @@ void testMerge() {
         }
         delete[] merged;
     }
-      std::cout << "All test cases passed for merge.\n";
+      cout << "All test cases passed for merge.\n";
 }
+//merge function using maps nlog(n) time complexity
+int * merge_maps(int a[],int a1,int b[],int b1){
+    map<int,bool>mp;
+    for(int i=0;i<a1;i++){
+       mp[a[i]]=true;
+    }
+    for(int i=0;i<b1;i++){
+       mp[b[i]]=true;
+    }
+    int *ans=new int[a1+b1];
+    int i=0;
+    for(auto & str : mp){
+        ans[i++]= str.first;
+    }
+    return ans;
+}
+//function to test merge_maps function
+void testMergeMaps() {
+    // Test case 1
+    {
+        int a[5] = {1, 2, 3, 4, 5};
+        int b[5] = {3, 4, 5, 6, 7};
+        int* merged = merge_maps(a, 5, b, 5);
+        int expected[7] = {1, 2, 3, 4, 5, 6, 7};
+        for (int i = 0; i < 7; i++) {
+            assert(merged[i] == expected[i]);
+        }
+        delete[] merged;
+    }
+
+    // Test case 2
+    {
+        int a[3] = {1, 3, 5};
+        int b[3] = {2, 4, 6};
+        int* merged = merge_maps(a, 3, b, 3);
+        int expected[6] = {1, 2, 3, 4, 5, 6};
+        for (int i = 0; i < 6; i++) {
+            assert(merged[i] == expected[i]);
+        }
+        delete[] merged;
+    }
+
+    // Test case 3
+    {
+        int a[0] = {};
+        int b[3] = {1, 2, 3};
+        int* merged = merge_maps(a, 0, b, 3);
+        int expected[3] = {1, 2, 3};
+        for (int i = 0; i < 3; i++) {
+            assert(merged[i] == expected[i]);
+        }
+        delete[] merged;
+    }
+
+    cout << "All test cases passed for merge_maps.\n";
+}
+
 
 int main(){
   testMerge();
+  testMergeMaps();
 }
