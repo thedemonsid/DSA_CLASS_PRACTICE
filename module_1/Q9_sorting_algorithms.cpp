@@ -42,6 +42,12 @@ void selection_sort(int a[], int n) {
     cout << endl;
 }
 
+// cpmpare function for custom made stl sort
+
+bool compare(int a, int b) {
+    //for descending order
+    return a > b;
+}
 int main(){
     int n;
     cout<<"Enter the number : ";
@@ -51,6 +57,6 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>a[i];
     } 
-    insertion_sort(a,n);
-
+   sort(a,a+n,compare);
+   display(a,n);
 }
