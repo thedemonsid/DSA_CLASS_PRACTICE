@@ -137,6 +137,27 @@ void mergeSort(int *arr,int l,int r){
     }
 }
 
+//function for countSort
+void countSort(int arr[], int n) {
+    int max = *max_element(arr, arr+n);
+    int countArr[max+1] = {0};
+
+    for(int i = 0; i < n; i++)
+        countArr[arr[i]]++;
+
+    for(int i = 1; i <= max; i++)
+        countArr[i] += countArr[i-1];
+
+    int output[n];
+    for(int i = n-1; i >= 0; i--) {
+        output[countArr[arr[i]]-1] = arr[i];
+        countArr[arr[i]]--;
+    }
+
+    for(int i = 0; i < n; i++)
+        arr[i] = output[i];
+}
+
 //Test cases for merge function
 void testMerge() {
     // Test case 1
@@ -259,6 +280,38 @@ void testBubbleSort() {
     cout << "All test cases passed for bubble_sort.\n";
 }
 
+// Test function for merge sort
+void testMergeSort() {
+    // Test case 1
+    {
+        int a[5] = {5, 4, 3, 2, 1};
+        mergeSort(a, 0, 4);
+        for (int i = 0; i < 5; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 2
+    {
+        int a[3] = {3, 1, 2};
+        mergeSort(a, 0, 2);
+        for (int i = 0; i < 3; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 3
+    {
+        int a[6] = {100, 200, 300, 400, 500, 600};
+        mergeSort(a, 0, 5);
+        for (int i = 0; i < 6; i++) {
+            assert(a[i] == (i+1)*100);
+        }
+    }
+
+    cout << "All test cases passed for mergeSort.\n";
+}
+
 // Test function for selection sort
 void testSelectionSort() {
     // Test case 1
@@ -281,8 +334,39 @@ void testSelectionSort() {
     cout << "All test cases passed for selection_sort.\n";
 }
 
+//test cases for countSort
+void testCountSort() {
+    // Test case 1
+    {
+        int a[5] = {5, 4, 3, 2, 1};
+        countSort(a, 5);
+        for (int i = 0; i < 5; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 2
+    {
+        int a[3] = {3, 1, 2};
+        countSort(a, 3);
+        for (int i = 0; i < 3; i++) {
+            assert(a[i] == i + 1);
+        }
+    }
+
+    // Test case 3
+    {
+        int a[6] = {100, 200, 300, 400, 500, 600};
+        countSort(a, 6);
+        for (int i = 0; i < 6; i++) {
+            assert(a[i] == (i+1)*100);
+        }
+    }
+
+    cout << "All test cases passed for countSort.\n";
+}
+
 int main(){
-  int arr[5]={23,45,2,143,3};
-  mergeSort(arr,0,4);
-  display(arr,5);
+  testMergeSort();
+  testCountSort();
 }
