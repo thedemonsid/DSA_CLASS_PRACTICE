@@ -9,6 +9,8 @@ struct hash_table{
         value = v;
         next = NULL;
     }
+
+    
 };
 //inserting the element in the hash table
 void insert(hash_table* &head, int key, int value){
