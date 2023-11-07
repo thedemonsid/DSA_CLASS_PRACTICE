@@ -84,6 +84,11 @@ vector <vector<int>> add(vector<vector<int>>a,vector<vector<int>>b){
         return c;
 }
 //function to multiply two sparse matrix
+/*
+ this function performs matrix multiplication, ensuring the matrices have 
+ compatible dimensions. It keeps track of non-zero elements in the resulting
+  matrix and sorts them by their row and column indices.
+*/
 vector<vector<int>>multiply(vector<vector<int>>a,vector<vector<int>>b){
     if(a[0][1]!=b[0][0]){
         cout<<"Invalid matrix";
