@@ -11,11 +11,9 @@ struct node{
    }
 };
 // Adding new elements to node
-/*
-In simple terms, this function adds a new node to a linked list in a way that maintains 
+/*In simple terms, this function adds a new node to a linked list in a way that maintains 
 the list in sorted order based on the exponents. If a node with the same exponent already exists,
- it combines their coefficients.
-*/
+ it combines their coefficients.*/
 void addElement(node* &head, int coef, int exp) {
     node* newNode = new node(coef, exp);
     if (head == NULL) {
@@ -61,6 +59,10 @@ node* add(node* head1, node* head2) {
     return head1;
 }
 //function to derive derivative of polynomial
+/*
+this function calculates the derivative of a polynomial represented by a linked list. 
+It applies the power rule of differentiation to each term in the polynomial.
+*/
 node* derivative(node* head) {
     node* curr = head;
     while (curr != NULL) {
