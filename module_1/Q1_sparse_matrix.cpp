@@ -131,6 +131,10 @@ vector<vector<int>>multiply(vector<vector<int>>a,vector<vector<int>>b){
     return c;
 }
 // Function to display the sparse matrix
+/*
+ this code demonstrates the creation and manipulation of sparse matrices,
+  showcasing addition and multiplication operations on them, and provides a way to display the results.
+*/
 void display(vector<vector<int>>sparse_matrix){
     for(int i=0;i<sparse_matrix.size();i++){
          for(int j=0;j<sparse_matrix[i].size();j++){
