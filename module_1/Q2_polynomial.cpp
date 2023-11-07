@@ -73,6 +73,9 @@ node* derivative(node* head) {
     return head;
 }
 //function to multiply two polynomials
+/*this function multiplies two polynomials represented by linked lists by performing a double loop,
+ where each combination of terms from the two polynomials is multiplied and added to the result polynomial.
+  The result is stored in a new linked list head3.*/
 node* multiply(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
