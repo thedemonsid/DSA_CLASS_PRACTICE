@@ -91,6 +91,9 @@ node* multiply(node* head1, node* head2) {
     return head3;
 }
 //function to display linked list
+/*this function takes a linked list representing a polynomial and prints it out in a human-readable format, 
+omitting terms with a coefficient of zero. It ensures that the terms are properly formatted and
+ separated by appropriate signs.*/
 void display(node* head) {
     node* curr = head;
     while (curr != NULL) {
