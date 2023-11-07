@@ -1,1 +1,1 @@
-DSA Practise Modeules By Siddhesh Shrirame & Team
+DSA Practise Modules By Siddhesh Shrirame & Team
