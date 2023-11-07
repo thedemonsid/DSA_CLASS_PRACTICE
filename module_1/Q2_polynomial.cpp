@@ -48,6 +48,9 @@ void addElement(node* &head, int coef, int exp) {
     }
 }
 //function to add two polynomials
+/* In simple terms, this function combines the nodes from the second linked list (head2) 
+into the first linked list (head1) by adding nodes with the same exponent and inserting 
+new nodes in the correct sorted position based on exponent.*/
 node* add(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
