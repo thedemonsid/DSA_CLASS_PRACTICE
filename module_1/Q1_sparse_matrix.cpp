@@ -1,9 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 vector<vector<int>> create(vector<vector<int>> matrix)
 {
     vector<vector<int>> sparse_matrix;
     vector<int> temp1;
+=======
+//function to create sparse matrix
+/* This code creates a new representation of the input matrix, where it stores the
+ dimensions of the original matrix and a list of non-zero elements with their row and column 
+ indices. The code counts how many non-zero elements there are in the original matrix and stores
+  this count in the metadata. This can be useful for saving memory when the majority of elements
+   in the matrix are zero.
+
+*/
+vector<vector<int>>create(vector<vector<int>>matrix){
+    vector<vector<int>>sparse_matrix;
+    vector<int>temp1;
     temp1.push_back(matrix.size());
     temp1.push_back(matrix[0].size());
     temp1.push_back(0);
