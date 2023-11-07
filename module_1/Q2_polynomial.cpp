@@ -11,6 +11,11 @@ struct node{
    }
 };
 // Adding new elements to node
+/*
+In simple terms, this function adds a new node to a linked list in a way that maintains 
+the list in sorted order based on the exponents. If a node with the same exponent already exists,
+ it combines their coefficients.
+*/
 void addElement(node* &head, int coef, int exp) {
     node* newNode = new node(coef, exp);
     if (head == NULL) {
