@@ -1,7 +1,7 @@
  #include<bits/stdc++.h>
 using namespace std;
 //function to create sparse matrix
-/* This code creates a new representation of the input matrix, where it stores the
+/* his code creates a new representation of the input matrix, where it stores the
  dimensions of the original matrix and a list of non-zero elements with their row and column 
  indices. The code counts how many non-zero elements there are in the original matrix and stores
   this count in the metadata. This can be useful for saving memory when the majority of elements
@@ -32,6 +32,11 @@ vector<vector<int>>create(vector<vector<int>>matrix){
 //function to add two sparse matrix
 vector <vector<int>> add(vector<vector<int>>a,vector<vector<int>>b){
     //first element of sparse matrix is number of rows,columns and non zero elements
+    /*
+    this function combines two matrices into a new one while ensuring they have compatible dimensions.
+     It also keeps track of non-zero elements in the resulting matrix and sorts them by their 
+     row and column indices.
+    */
       if(a[0][0]!=b[0][0]||a[0][1]!=b[0][1]){
           cout<<"Invalid matrix";
           return {};
