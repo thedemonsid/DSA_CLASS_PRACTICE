@@ -1,7 +1,7 @@
  #include<bits/stdc++.h>
 using namespace std;
 //function to create sparse matrix
-/* his code creates a new representation of the input matrix, where it stores the
+/* this code creates a new representation of the input matrix, where it stores the
  dimensions of the original matrix and a list of non-zero elements with their row and column 
  indices. The code counts how many non-zero elements there are in the original matrix and stores
   this count in the metadata. This can be useful for saving memory when the majority of elements
