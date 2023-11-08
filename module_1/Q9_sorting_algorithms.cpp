@@ -158,7 +158,72 @@ void countSort(int arr[], int n) {
         arr[i] = output[i];
 }
 
+//function to find maximum number in array
+int findMax(int arr[], int n) {
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+//function for radix sort
+void radixSort(int arr[],int n){
+    int mx = findMax(arr,n);
+    for(int i=0;i<mx;i++){
+        vector<vector<int>>bucket(10);
+        for(int j=0;j<n;j++){
+            bucket[(int)(arr[j]/pow(10,i))%10].push_back(arr[j]);    
+        }
+        int k = 0;
+        for(int j=0;j<10;j++){
+            for(int l=0;l<bucket[j].size();l++){
+                arr[k++] = bucket[j][l];
+            }
+        }
+    }
+}
+
+/*<------------------------------------------------------------------------------>*/
 //Test cases for merge function
+
+// Test cases for radixSort function
+void testRadixSort() {
+    // Test case 1
+    {
+        int arr[8] = {170, 45, 75, 90, 802, 24, 2, 66};
+        int sorted[8] = {2, 24, 45, 66, 75, 90, 170, 802};
+        radixSort(arr, 8);
+        for (int i = 0; i < 8; i++) {
+            assert(arr[i] == sorted[i]);
+        }
+    }
+
+    // Test case 2
+    {
+        int arr[5] = {5, 3, 2, 1, 4};
+        int sorted[5] = {1, 2, 3, 4, 5};
+        radixSort(arr, 5);
+        for (int i = 0; i < 5; i++) {
+            assert(arr[i] == sorted[i]);
+        }
+    }
+
+    // Test case 3
+    {
+        int arr[3] = {3, 2, 1};
+        int sorted[3] = {1, 2, 3};
+        radixSort(arr, 3);
+        for (int i = 0; i < 3; i++) {
+            assert(arr[i] == sorted[i]);
+        }
+    }
+
+    cout << "All test cases passed for radixSort.\n";
+}
+
 void testMerge() {
     // Test case 1
     {
@@ -367,6 +432,5 @@ void testCountSort() {
 }
 
 int main(){
-  testMergeSort();
-  testCountSort();
+ testRadixSort();
 }
