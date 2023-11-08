@@ -187,7 +187,7 @@ void radixSort(int arr[],int n){
 }
 
 /*<------------------------------------------------------------------------------>*/
-//Test cases for merge function
+
 
 // Test cases for radixSort function
 void testRadixSort() {
@@ -224,6 +224,7 @@ void testRadixSort() {
     cout << "All test cases passed for radixSort.\n";
 }
 
+//Test cases for merge function
 void testMerge() {
     // Test case 1
     {
