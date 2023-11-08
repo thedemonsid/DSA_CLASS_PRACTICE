@@ -434,4 +434,11 @@ void testCountSort() {
 
 int main(){
  testRadixSort();
+ testBubbleSort();
+ testCountSort();
+ testInsertionSort();
+ testMerge();
+ testMergeMaps();
+ testMergeSort();
+ testSelectionSort(); 
 }
