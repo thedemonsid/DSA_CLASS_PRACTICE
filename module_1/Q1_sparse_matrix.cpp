@@ -1,42 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-vector<vector<int>> create(vector<vector<int>> matrix)
-{
-    vector<vector<int>> sparse_matrix;
-    vector<int> temp1;
-=======
-//function to create sparse matrix
+// function to create sparse matrix
 /* This code creates a new representation of the input matrix, where it stores the
- dimensions of the original matrix and a list of non-zero elements with their row and column 
+ dimensions of the original matrix and a list of non-zero elements with their row and column
  indices. The code counts how many non-zero elements there are in the original matrix and stores
   this count in the metadata. This can be useful for saving memory when the majority of elements
    in the matrix are zero.
 
 */
-vector<vector<int>>create(vector<vector<int>>matrix){
-    vector<vector<int>>sparse_matrix;
-    vector<int>temp1;
-    temp1.push_back(matrix.size());
-    temp1.push_back(matrix[0].size());
-    temp1.push_back(0);
-    sparse_matrix.push_back(temp1);
-    for (int i = 0; i < matrix.size(); i++)
+vector<vector<int>> create(vector<vector<int>> matrix)
+{
+    vector<vector<int>> sparse_matrix;
+    vector<int> temp1;
+
+    vector<vector<int>> create(vector<vector<int>> matrix)
     {
-        for (int j = 0; j < matrix[i].size(); j++)
+        vector<vector<int>> sparse_matrix;
+        vector<int> temp1;
+        temp1.push_back(matrix.size());
+        temp1.push_back(matrix[0].size());
+        temp1.push_back(0);
+        sparse_matrix.push_back(temp1);
+        for (int i = 0; i < matrix.size(); i++)
         {
-            if (matrix[i][j] != 0)
+            for (int j = 0; j < matrix[i].size(); j++)
             {
-                vector<int> temp;
-                temp.push_back(i);
-                temp.push_back(j);
-                temp.push_back(matrix[i][j]);
-                sparse_matrix.push_back(temp);
-                sparse_matrix[0][2]++;
+                if (matrix[i][j] != 0)
+                {
+                    vector<int> temp;
+                    temp.push_back(i);
+                    temp.push_back(j);
+                    temp.push_back(matrix[i][j]);
+                    sparse_matrix.push_back(temp);
+                    sparse_matrix[0][2]++;
+                }
             }
         }
+        return sparse_matrix;
     }
-    return sparse_matrix;
 }
 // function to add two sparse matrix
 vector<vector<int>> add(vector<vector<int>> a, vector<vector<int>> b)
