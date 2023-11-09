@@ -234,6 +234,15 @@ void countSort(int arr[], int n) {
 }
 
 //function to find maximum number in array
+
+/*
+This function efficiently determines the maximum value in an array 
+by comparing each element to the current maximum, updating it if
+ a larger element is found. The time complexity of this function
+  is O(n), where n is the number of elements in the array.
+*/
+
+
 int findMax(int arr[], int n) {
     int max = arr[0];
     for (int i = 1; i < n; i++) {
