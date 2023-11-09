@@ -116,6 +116,14 @@ int * merge(int *a,int a1,int *b,int b1){
 }
 
 //merge function using maps nlog(n) time complexity
+
+/*
+This function effectively combines the unique elements of two 
+arrays using a map to ensure that each element appears only once
+ in the merged array. The time complexity of this function 
+ is O(a1 + b1) due to the iteration over the elements of both arrays.
+*/
+
 int * merge_maps(int a[],int a1,int b[],int b1){
     map<int,bool>mp;
     for(int i=0;i<a1;i++){
