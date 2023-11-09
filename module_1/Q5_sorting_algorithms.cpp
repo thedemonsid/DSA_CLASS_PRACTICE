@@ -10,6 +10,14 @@ void display(int a[],int n){
 }
 
 //insertion sort
+
+/*
+The key idea behind Insertion Sort is to build the sorted portion of the array
+ one element at a time by inserting each element into its correct position 
+ within the sorted part of the array.
+*/
+
+
 void insertion_sort(int a[],int n){
    for(int i=1;i<n;i++){
         for(int j=0;j<i;j++){
@@ -20,6 +28,17 @@ cout<<endl;
 }
 
 //function to bubble sort
+
+/*
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list,
+ compares adjacent elements, and swaps them if they are in the wrong order.
+ The algorithm gets its name because smaller elements "bubble" to the top of
+  the array with each pass. However, it is not the most efficient sorting
+   algorithm, especially for large datasets, as it has a time complexity
+    of O(n^2) in the worst case.
+*/
+
+
 void bubble_sort(int  a[],int n){
    for(int j=0;j<n-1;j++){
     for(int i=0;i<n-j-1;i++){
@@ -30,6 +49,17 @@ void bubble_sort(int  a[],int n){
 }
 
 //function to selection sort
+
+/*
+Selection Sort works by dividing the array into a sorted and an 
+unsorted region. In each iteration of the outer loop, it finds
+ the minimum element in the unsorted region and swaps it with
+  the first element of the unsorted region, expanding the
+   sorted region. The time complexity of Selection Sort is
+    O(n^2), making it inefficient for large datasets.
+*/
+
+
 void selection_sort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
         int min_idx = i;
@@ -50,6 +80,15 @@ bool compare(int a, int b) {
 }
 
 //function to merge two sorted arrays
+
+/*
+This function efficiently merges two sorted arrays into a single
+ sorted array, which is a crucial step in the Merge Sort algorithm.
+  The time complexity of the merging step is O(a1 + b1),
+   where a1 and b1 are the sizes of arrays a and b, respectively.
+*/
+
+
 int * merge(int *a,int a1,int *b,int b1){
     int i=0,j=0,k=0;
     int *ans=new int[a1+b1];
