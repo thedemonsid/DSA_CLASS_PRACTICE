@@ -184,6 +184,15 @@ void merge(int *arr,int l,int m,int r){
 }
 
 //functoin for merge sort
+
+/*
+Merge Sort divides the array into smaller subarrays, sorts them independently,
+ and then merges them to achieve a fully sorted array. The time complexity
+  of Merge Sort is O(n log n), where n is the number of elements in the array,
+   making it a highly efficient sorting algorithm for large datasets.
+*/
+
+
 void mergeSort(int *arr,int l,int r){
     if(l<r){
      int m = (l+r)/2;
