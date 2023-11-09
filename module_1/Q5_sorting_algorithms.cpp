@@ -203,6 +203,16 @@ void mergeSort(int *arr,int l,int r){
 }
 
 //function for countSort
+
+/*
+Counting Sort is a non-comparative sorting algorithm that works well 
+when the range of numbers (difference between the maximum and minimum values) 
+is not significantly greater than the number of elements to be sorted.
+ The time complexity of Counting Sort is O(n + k), where n is the number
+  of elements in the input array and k is the range of input values.
+*/
+
+
 void countSort(int arr[], int n) {
     int max = *max_element(arr, arr+n);
     int countArr[max+1] = {0};
