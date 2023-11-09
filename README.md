@@ -1,6 +1,6 @@
 # Data Structures and Algorithms Practice Repository
 
-This repository is dedicated to practicing and understanding the core concepts of Data Structures and Algorithms (DSA). While it doesn't cover every possible question, it focuses on the more challenging and fundamental problems. By understanding and solving these, you should be able to tackle a wide range of DSA problems.
+This repository is dedicated to practicing and understanding the core concepts of Data Structures and Algorithms (DSA). While it doesn't cover every possible question, it focuses on the more challenging and fundamental problems. By understanding and solving these, you should be able to tackle a wide range of DSA problems in this Repository.
 
 ## Getting Started
 
