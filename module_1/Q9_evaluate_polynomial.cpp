@@ -121,6 +121,17 @@ node* multiply(node* head1, node* head2) {
     return head3;
 }
 //function to evaluate the polynomial
+
+/*
+This function, named evaluate, takes a linked list representing
+ a polynomial (head). It iterates through each term in the polynomial,
+  evaluates the term by raising the coefficient to the power of the
+   exponent, and adds the result to a running sum. The final sum is
+    returned, representing the evaluation of the polynomial for
+     a given set of values.
+*/
+
+
 long long int evaluate(node *head){
     node* curr = head;
     long long int sum =0;
@@ -131,6 +142,18 @@ long long int evaluate(node *head){
     return sum;
 }
 //function to display linked list
+
+/*
+The display function takes a linked list representing a polynomial (head)
+ and prints its terms in a human-readable form. It iterates through each term,
+  considering the coefficient and exponent. The terms are displayed as
+   coefficients followed by "x^" and the exponent. Proper signs are included
+    between terms to ensure a readable polynomial expression. The evaluate
+     function is also called to display the result of evaluating the polynomial.
+      In the provided main function, a polynomial is created, displayed, and evaluated.
+*/
+
+
 void display(node* head) {
     node* curr = head;
     while (curr != NULL) {
