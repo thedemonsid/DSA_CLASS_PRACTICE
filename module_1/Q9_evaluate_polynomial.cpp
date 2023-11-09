@@ -11,6 +11,16 @@ struct node{
    }
 };
 // Adding new elements to node
+
+/*
+This function efficiently maintains a sorted linked list representing
+ a polynomial, ensuring that nodes with the same exponent are combined
+  by adding their coefficients. The time complexity is determined by the
+   traversal of the linked list, which is O(n) in the worst case, where
+    n is the number of nodes in the list.
+*/
+
+
 void addElement(node* &head, int coef, int exp) {
     node* newNode = new node(coef, exp);
     if (head == NULL) {
