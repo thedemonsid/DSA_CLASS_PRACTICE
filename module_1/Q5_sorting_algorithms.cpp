@@ -254,6 +254,17 @@ int findMax(int arr[], int n) {
 }
 
 //function for radix sort
+
+/*
+The overall idea of Radix Sort is to sort numbers based on individual
+ digits, starting from the least significant digit and moving towards
+  the most significant digit. This process ensures that the numbers 
+  are sorted in each pass and eventually results in a fully sorted
+   array. The time complexity of Radix Sort is O(d * (n + k)), 
+   where d is the number of digits, n is the number of elements,
+ and k is the base of the number system (usually 10 for decimal numbers).
+*/
+
 void radixSort(int arr[],int n){
     int mx = findMax(arr,n);
     for(int i=0;i<mx;i++){
