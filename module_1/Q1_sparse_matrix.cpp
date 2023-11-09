@@ -39,11 +39,13 @@ vector<vector<int>> create(vector<vector<int>> matrix)
 vector<vector<int>> add(vector<vector<int>> a, vector<vector<int>> b)
 {
     // first element of sparse matrix is number of rows,columns and non zero elements
+
     /*
-    this function combines two matrices into a new one while ensuring they have compatible dimensions.
+    This function combines two matrices into a new one while ensuring they have compatible dimensions.
      It also keeps track of non-zero elements in the resulting matrix and sorts them by their
      row and column indices.
     */
+
     if (a[0][0] != b[0][0] || a[0][1] != b[0][1])
     {
         cout << "Invalid matrix";
@@ -99,11 +101,14 @@ vector<vector<int>> add(vector<vector<int>> a, vector<vector<int>> b)
     return c;
 }
 // function to multiply two sparse matrix
+
 /*
  this function performs matrix multiplication, ensuring the matrices have
  compatible dimensions. It keeps track of non-zero elements in the resulting
   matrix and sorts them by their row and column indices.
 */
+
+
 vector<vector<int>> multiply(vector<vector<int>> a, vector<vector<int>> b)
 {
     if (a[0][1] != b[0][0])
@@ -155,10 +160,14 @@ vector<vector<int>> multiply(vector<vector<int>> a, vector<vector<int>> b)
     return c;
 }
 // Function to display the sparse matrix
+
+
 /*
  this code demonstrates the creation and manipulation of sparse matrices,
   showcasing addition and multiplication operations on them, and provides a way to display the results.
 */
+
+
 void display(vector<vector<int>> sparse_matrix)
 {
     for (int i = 0; i < sparse_matrix.size(); i++)

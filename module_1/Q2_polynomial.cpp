@@ -11,9 +11,13 @@ struct node{
    }
 };
 // Adding new elements to node
+
+
 /*In simple terms, this function adds a new node to a linked list in a way that maintains 
 the list in sorted order based on the exponents. If a node with the same exponent already exists,
  it combines their coefficients.*/
+
+
 void addElement(node* &head, int coef, int exp) {
     node* newNode = new node(coef, exp);
     if (head == NULL) {
@@ -46,9 +50,13 @@ void addElement(node* &head, int coef, int exp) {
     }
 }
 //function to add two polynomials
+
+
 /* In simple terms, this function combines the nodes from the second linked list (head2) 
 into the first linked list (head1) by adding nodes with the same exponent and inserting 
 new nodes in the correct sorted position based on exponent.*/
+
+
 node* add(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
@@ -59,10 +67,14 @@ node* add(node* head1, node* head2) {
     return head1;
 }
 //function to derive derivative of polynomial
+
+
 /*
 this function calculates the derivative of a polynomial represented by a linked list. 
 It applies the power rule of differentiation to each term in the polynomial.
 */
+
+
 node* derivative(node* head) {
     node* curr = head;
     while (curr != NULL) {
@@ -73,9 +85,13 @@ node* derivative(node* head) {
     return head;
 }
 //function to multiply two polynomials
+
+
 /*this function multiplies two polynomials represented by linked lists by performing a double loop,
  where each combination of terms from the two polynomials is multiplied and added to the result polynomial.
   The result is stored in a new linked list head3.*/
+
+
 node* multiply(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
@@ -91,9 +107,13 @@ node* multiply(node* head1, node* head2) {
     return head3;
 }
 //function to display linked list
+
+
 /*this function takes a linked list representing a polynomial and prints it out in a human-readable format, 
 omitting terms with a coefficient of zero. It ensures that the terms are properly formatted and
  separated by appropriate signs.*/
+
+ 
 void display(node* head) {
     node* curr = head;
     while (curr != NULL) {
