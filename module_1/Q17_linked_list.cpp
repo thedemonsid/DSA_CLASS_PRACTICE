@@ -12,6 +12,12 @@ struct node
         child = NULL;
     }
 };
+
+
+/*The traverse function visits each node in a tree-like structure and prints out the value stored in each node.
+ It starts at a given node (head), prints its value, then recursively goes down to its child (if it exists) and its sibling (if it exists) to do the same thing. This process continues until there are no more child or sibling nodes to visit.*/
+
+ 
 void traverse(node *head)
 {
     node *temp = head;
