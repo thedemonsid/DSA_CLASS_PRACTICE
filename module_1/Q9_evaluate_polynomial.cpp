@@ -53,6 +53,17 @@ void addElement(node* &head, int coef, int exp) {
     }
 }
 //function to add two polynomials
+
+/*
+This function, named add, takes two linked lists representing polynomials
+ (head1 and head2). It iterates through the second polynomial (head2), 
+ and for each term, it adds or updates the corresponding term in the
+  first polynomial (head1) using the addElement function. Finally, it 
+  returns the modified head1. The purpose is to add the terms of the 
+  second polynomial to the first polynomial
+*/
+
+
 node* add(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
