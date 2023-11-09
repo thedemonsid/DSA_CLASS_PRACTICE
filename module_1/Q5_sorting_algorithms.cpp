@@ -17,7 +17,8 @@ The key idea behind Insertion Sort is to build the sorted portion of the array
  within the sorted part of the array.
 */
 
-
+ 
+ 
 void insertion_sort(int a[],int n){
    for(int i=1;i<n;i++){
         for(int j=0;j<i;j++){
