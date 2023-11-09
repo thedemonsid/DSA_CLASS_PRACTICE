@@ -140,6 +140,15 @@ int * merge_maps(int a[],int a1,int b[],int b1){
     return ans;
 }
 //function to merge the array for mergeSort
+
+/*
+This function efficiently merges two sorted subarrays into a
+ single sorted array, which is a crucial step in the Merge
+  Sort algorithm. The time complexity of the merging step is
+   O(n), where n is the total number of elements being merged.
+*/
+
+
 void merge(int *arr,int l,int m,int r){
     int n1 = m-l+1;
     int n2 = r-m;
