@@ -74,6 +74,17 @@ node* add(node* head1, node* head2) {
     return head1;
 }
 //function to derive derivative of polynomial
+
+/*
+This function, named derivative, takes a linked list representing
+ a polynomial (head). It iterates through each term in the polynomial
+  and computes the derivative by updating the coefficient and exponent 
+  of each term accordingly. The coefficient is multiplied by the exponent,
+   and the exponent is then decremented by 1. The modified linked list is 
+   returned, representing the derivative of the original polynomial.
+*/
+
+
 node* derivative(node* head) {
     node* curr = head;
     while (curr != NULL) {
@@ -84,6 +95,17 @@ node* derivative(node* head) {
     return head;
 }
 //function to multiply two polynomials
+
+/*
+This function, named multiply, takes two linked lists representing polynomials
+ (head1 and head2). It multiplies each term of the first polynomial with each
+  term of the second polynomial, and the results are added or updated in a new
+   linked list (head3). The addElement function is used to handle the addition
+    or updating of terms in the result polynomial. Finally, the function returns
+     the linked list representing the product of the two input polynomials.
+*/
+
+
 node* multiply(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
