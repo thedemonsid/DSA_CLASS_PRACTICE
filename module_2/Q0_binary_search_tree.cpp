@@ -39,6 +39,14 @@ void insert(node *&head, int n)
     }
 }
 // Traverse Right
+
+/*
+This function navigates to the rightmost (or maximum) node of 
+a given subtree within a binary search tree. It keeps moving
+ to the right child of each node until it reaches the node with 
+ no right child, indicating the maximum value in the subtree.
+*/
+
 node *traverse_right(node *curr)
 {
     if (curr->right == NULL)
