@@ -11,6 +11,16 @@ struct node{
    }
 };
 // Adding new elements to node
+
+/*
+This function efficiently maintains a sorted linked list representing
+ a polynomial, ensuring that nodes with the same exponent are combined
+  by adding their coefficients. The time complexity is determined by the
+   traversal of the linked list, which is O(n) in the worst case, where
+    n is the number of nodes in the list.
+*/
+
+
 void addElement(node* &head, int coef, int exp) {
     node* newNode = new node(coef, exp);
     if (head == NULL) {
@@ -43,6 +53,17 @@ void addElement(node* &head, int coef, int exp) {
     }
 }
 //function to add two polynomials
+
+/*
+This function, named add, takes two linked lists representing polynomials
+ (head1 and head2). It iterates through the second polynomial (head2), 
+ and for each term, it adds or updates the corresponding term in the
+  first polynomial (head1) using the addElement function. Finally, it 
+  returns the modified head1. The purpose is to add the terms of the 
+  second polynomial to the first polynomial
+*/
+
+
 node* add(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
@@ -53,6 +74,17 @@ node* add(node* head1, node* head2) {
     return head1;
 }
 //function to derive derivative of polynomial
+
+/*
+This function, named derivative, takes a linked list representing
+ a polynomial (head). It iterates through each term in the polynomial
+  and computes the derivative by updating the coefficient and exponent 
+  of each term accordingly. The coefficient is multiplied by the exponent,
+   and the exponent is then decremented by 1. The modified linked list is 
+   returned, representing the derivative of the original polynomial.
+*/
+
+
 node* derivative(node* head) {
     node* curr = head;
     while (curr != NULL) {
@@ -63,6 +95,17 @@ node* derivative(node* head) {
     return head;
 }
 //function to multiply two polynomials
+
+/*
+This function, named multiply, takes two linked lists representing polynomials
+ (head1 and head2). It multiplies each term of the first polynomial with each
+  term of the second polynomial, and the results are added or updated in a new
+   linked list (head3). The addElement function is used to handle the addition
+    or updating of terms in the result polynomial. Finally, the function returns
+     the linked list representing the product of the two input polynomials.
+*/
+
+
 node* multiply(node* head1, node* head2) {
     node* curr1 = head1;
     node* curr2 = head2;
@@ -78,6 +121,17 @@ node* multiply(node* head1, node* head2) {
     return head3;
 }
 //function to evaluate the polynomial
+
+/*
+This function, named evaluate, takes a linked list representing
+ a polynomial (head). It iterates through each term in the polynomial,
+  evaluates the term by raising the coefficient to the power of the
+   exponent, and adds the result to a running sum. The final sum is
+    returned, representing the evaluation of the polynomial for
+     a given set of values.
+*/
+
+
 long long int evaluate(node *head){
     node* curr = head;
     long long int sum =0;
@@ -88,6 +142,18 @@ long long int evaluate(node *head){
     return sum;
 }
 //function to display linked list
+
+/*
+The display function takes a linked list representing a polynomial (head)
+ and prints its terms in a human-readable form. It iterates through each term,
+  considering the coefficient and exponent. The terms are displayed as
+   coefficients followed by "x^" and the exponent. Proper signs are included
+    between terms to ensure a readable polynomial expression. The evaluate
+     function is also called to display the result of evaluating the polynomial.
+      In the provided main function, a polynomial is created, displayed, and evaluated.
+*/
+
+
 void display(node* head) {
     node* curr = head;
     while (curr != NULL) {
