@@ -17,6 +17,16 @@ struct node
     }
 };
 // function to insert at end of linked list
+
+/*
+This function inserts a new node with a given value at the 
+end of a linked list. It first creates a new node, then checks
+ if the list is empty. If it's empty, the new node becomes the
+  head. If not, it traverses to the current end of the list
+   and appends the new node there.
+*/
+
+
 void insertAtEnd(node *&head, int x)
 {
     node *temp = new node(x);
