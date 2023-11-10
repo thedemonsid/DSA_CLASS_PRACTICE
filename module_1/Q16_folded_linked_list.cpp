@@ -109,6 +109,19 @@ node *zigzagFold(node *&head, int n)
     Finally, it loops through the fold vector in reverse order and inserts the elements into the 
     linked list in a zigzag manner.
     */
+
+
+
+    /*           **THIS IS THE SUMMARY OF THE FUNCTION**
+    This set of code seems to aim at creating a linked list based
+     on user input, manipulating it with a fold operation, and
+      then displaying the modified list. It takes the number 
+      of nodes and the number of folds as input, reads a sequence
+       of numbers, creates a linked list, and then performs a 
+       zigzag fold on the list based on the given fold count.
+        The final result, after the folding operation, is displayed.
+    */
+
     for(int i=0;i<n;i++)
     {
         fold.push_back(head->data);
