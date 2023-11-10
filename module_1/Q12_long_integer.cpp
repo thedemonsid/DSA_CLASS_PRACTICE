@@ -51,6 +51,14 @@ void printList(node *head)
     cout << endl;
 }
 // function to know size of linked list
+
+/*
+This function calculates the size of a linked list by iterating 
+through the nodes, counting each one encountered, and returning 
+the total count of nodes in the list.
+*/
+
+
 int size(node *head)
 {
     int count = 0;
