@@ -1,3 +1,6 @@
+// Write a C program for construction of max heap using heapify algorithm. (21-30)
+// Solution for Question number-3.
+
 #include <bits/stdc++.h>
 using namespace std;
 
