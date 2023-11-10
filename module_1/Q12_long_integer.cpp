@@ -94,6 +94,17 @@ node *intToLink(string n)
     return link;
 }
 // comparison function for linked list
+
+/*
+This function compares two linked lists by first checking their sizes.
+ If they differ, it determines which list is greater or smaller based
+  on their sizes. If their sizes are the same, it compares the individual
+   nodes, iterating through each list, and determines which list is greater
+    based on the values of their respective nodes. If all nodes match, it
+     concludes that both lists are the same.
+*/
+
+
 void compare(node *a1, node *a2)
 {
     if (size(a1) > size(a2))
