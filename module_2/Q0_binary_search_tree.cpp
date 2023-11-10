@@ -100,6 +100,15 @@ void delete_node(node *&root, int key)
     }
 }
 // In-order traversal
+
+/*
+This function performs an inorder traversal of a binary search 
+tree. It recursively visits the nodes in the tree in the following
+ order: left subtree, current node, right subtree. It prints the 
+ data of each node in ascending order, following the principles
+  of a binary search tree.
+*/
+
 void inorder(node *root)
 {
     if (root != NULL)
