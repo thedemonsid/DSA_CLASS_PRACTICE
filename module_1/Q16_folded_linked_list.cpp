@@ -43,6 +43,16 @@ void insertAtEnd(node *&head, int x)
     curr->next = temp;
 }
 // function to display linked list
+
+/*
+This function displays the elements of a linked list.
+ It starts from the head of the list and iterates
+  through each node, printing the data contained in
+   each node, separated by a space. Once it reaches
+    the end of the list (where the node points to NULL),
+     it prints a new line to end the display.
+*/
+
 void display(node *head)
 {
     node *curr = head;
