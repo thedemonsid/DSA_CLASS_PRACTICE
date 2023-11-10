@@ -64,6 +64,15 @@ void display(node *head)
     cout << endl;
 }
 // function to know size of linked list
+
+/*
+This function computes the size of a linked list by iterating 
+through the nodes, counting each node encountered, and returning
+ the total count of nodes in the list. It's quite similar to the 
+ previous 'size' function, iterating through the list and
+  incrementing a counter for each node found.
+*/
+
 int size(node *head)
 {
     int count = 0;
