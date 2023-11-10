@@ -13,6 +13,16 @@ struct node
     }
 };
 // Insertion
+
+/*
+This function inserts a new node with a given value into
+ a binary search tree. If the tree is empty, it creates
+  the node as the root. If not, it traverses the tree,
+   placing the node according to the rules of a binary
+    search tree: smaller values go to the left, and 
+    larger values go to the right.
+*/
+
 void insert(node *&head, int n)
 {
     if (head == NULL)
