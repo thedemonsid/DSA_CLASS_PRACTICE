@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+/*The reverseKGroup function attempts to reverse nodes in groups of size k in a linked list by modifying the values of the nodes.
+It uses two pointers (temp1 and temp2) to traverse the list and a vector (ans) to temporarily store the values of the nodes in a group.
+The code has some issues: it modifies values instead of reversing nodes, does not handle cases where the number of nodes is not a multiple of k, and uses an unnecessary vector for reversal*/
   struct ListNode {
       int val;
       ListNode *next;
