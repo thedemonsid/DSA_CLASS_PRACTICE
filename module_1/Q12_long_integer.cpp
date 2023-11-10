@@ -30,6 +30,17 @@ void insertAtBeginning(node *&head, int data)
     head = newNode;
 }
 // function to print the linked list
+
+/*
+This function prints the elements of a linked list.
+ It starts from the head of the list and iterates
+  through each node, printing the data it contains.
+   It continues this process until it reaches the end 
+   of the list (where the node points to NULL),
+    printing each node's data along the way.
+*/
+
+
 void printList(node *head)
 {
     while (head != NULL)
