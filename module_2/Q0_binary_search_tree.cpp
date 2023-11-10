@@ -54,6 +54,17 @@ node *traverse_right(node *curr)
     return traverse_right(curr->right);
 }
 // Deletion
+
+/*
+This function deletes a node with a specified value from
+ a binary search tree. It finds the node with the given 
+ value, then handles three cases: if the node has no 
+ children, if it has one child, or if it has two children.
+  It manages node deletion accordingly, adjusting the tree
+   structure to maintain the binary search tree properties.
+*/
+
+
 void delete_node(node *&root, int key)
 {
     if (root == NULL)
