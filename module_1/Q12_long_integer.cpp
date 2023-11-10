@@ -15,6 +15,14 @@ struct node
     }
 };
 // function to insert at beginning
+
+/*
+This function inserts a new node at the beginning of a linked list.
+ It creates a new node with the given data, points the new node to 
+ the current head of the list, and then updates the head to make
+  the new node the beginning of the list.
+*/
+
 void insertAtBeginning(node *&head, int data)
 {
     node *newNode = new node(data);
