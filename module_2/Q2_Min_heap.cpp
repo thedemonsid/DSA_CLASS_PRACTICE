@@ -1,5 +1,5 @@
 // Write a C program for construction of min heap using heapify algorithm.
-
+// Solution for question number-2.
 #include <bits/stdc++.h>
 using namespace std;
 
