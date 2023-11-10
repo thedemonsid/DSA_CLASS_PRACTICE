@@ -120,6 +120,14 @@ void inorder(node *root)
 }
 
 // Pre-order traversal
+
+/*
+This function executes a preorder traversal of a binary tree.
+ It traverses the nodes in the tree in the following order: 
+ the current node first, then the left subtree, and finally 
+ the right subtree. It prints the data of each node as it visits them.
+*/
+
 void preorder(node *root)
 {
     if (root != NULL)
