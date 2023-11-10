@@ -71,6 +71,17 @@ int size(node *head)
 }
 
 // function to convert int to linkedlist
+
+/*
+This function converts a string of digits into a linked list.
+ It initializes a new node and then, by converting each character 
+ in the string to an integer and inserting it at the beginning of
+  the linked list, constructs the list in reverse order of the
+   digits in the string. The function returns the pointer to
+    the beginning of this linked list.
+*/
+
+
 node *intToLink(string n)
 {
     node *link = new node();
