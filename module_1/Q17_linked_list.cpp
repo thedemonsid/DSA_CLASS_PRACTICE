@@ -17,7 +17,7 @@ struct node
 /*The traverse function visits each node in a tree-like structure and prints out the value stored in each node.
  It starts at a given node (head), prints its value, then recursively goes down to its child (if it exists) and its sibling (if it exists) to do the same thing. This process continues until there are no more child or sibling nodes to visit.*/
 
- 
+
 void traverse(node *head)
 {
     node *temp = head;
@@ -26,7 +26,9 @@ void traverse(node *head)
         traverse(temp->child);
     if (temp->next != NULL)
         traverse(temp->next);
-}
+}/*this main function takes input about a tree-like structure, creates nodes to represent the tree,
+ sets up the connections between nodes, performs some calculations, and 
+ then calls the traverse function to traverse and print out the values of the nodes in a specific order.*/
 int main()
 {
     int t = 1;
