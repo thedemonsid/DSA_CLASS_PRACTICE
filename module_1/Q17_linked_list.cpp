@@ -26,9 +26,12 @@ void traverse(node *head)
         traverse(temp->child);
     if (temp->next != NULL)
         traverse(temp->next);
-}/*this main function takes input about a tree-like structure, creates nodes to represent the tree,
+}
+/*
+This main function takes input about a tree-like structure, creates nodes to represent the tree,
  sets up the connections between nodes, performs some calculations, and 
- then calls the traverse function to traverse and print out the values of the nodes in a specific order.*/
+ then calls the traverse function to traverse and print out the values of the nodes in a specific order.
+ */
 int main()
 {
     int t = 1;
