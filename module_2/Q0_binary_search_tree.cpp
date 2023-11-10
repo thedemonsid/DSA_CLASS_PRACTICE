@@ -139,6 +139,15 @@ void preorder(node *root)
 }
 
 // Post-order traversal
+
+/*
+This code primarily comprises functions to handle a binary search tree.
+ The postorder, search, and inorder functions are meant for different
+  tree traversals (post-order, searching for a value, and in-order
+   traversal respectively). The main function initiates a binary 
+   search tree with values 5, 2, 7, and 3, then performs an in-order traversal.
+*/
+
 void postorder(node *root)
 {
     if (root != NULL)
