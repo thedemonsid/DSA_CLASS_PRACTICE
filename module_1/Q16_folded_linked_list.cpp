@@ -17,6 +17,16 @@ struct node
     }
 };
 // function to insert at end of linked list
+
+/*
+This function inserts a new node with a given value at the 
+end of a linked list. It first creates a new node, then checks
+ if the list is empty. If it's empty, the new node becomes the
+  head. If not, it traverses to the current end of the list
+   and appends the new node there.
+*/
+
+
 void insertAtEnd(node *&head, int x)
 {
     node *temp = new node(x);
@@ -33,6 +43,16 @@ void insertAtEnd(node *&head, int x)
     curr->next = temp;
 }
 // function to display linked list
+
+/*
+This function displays the elements of a linked list.
+ It starts from the head of the list and iterates
+  through each node, printing the data contained in
+   each node, separated by a space. Once it reaches
+    the end of the list (where the node points to NULL),
+     it prints a new line to end the display.
+*/
+
 void display(node *head)
 {
     node *curr = head;
@@ -44,6 +64,15 @@ void display(node *head)
     cout << endl;
 }
 // function to know size of linked list
+
+/*
+This function computes the size of a linked list by iterating 
+through the nodes, counting each node encountered, and returning
+ the total count of nodes in the list. It's quite similar to the 
+ previous 'size' function, iterating through the list and
+  incrementing a counter for each node found.
+*/
+
 int size(node *head)
 {
     int count = 0;
@@ -80,6 +109,19 @@ node *zigzagFold(node *&head, int n)
     Finally, it loops through the fold vector in reverse order and inserts the elements into the 
     linked list in a zigzag manner.
     */
+
+
+
+    /*           **THIS IS THE SUMMARY OF THE FUNCTION**
+    This set of code seems to aim at creating a linked list based
+     on user input, manipulating it with a fold operation, and
+      then displaying the modified list. It takes the number 
+      of nodes and the number of folds as input, reads a sequence
+       of numbers, creates a linked list, and then performs a 
+       zigzag fold on the list based on the given fold count.
+        The final result, after the folding operation, is displayed.
+    */
+
     for(int i=0;i<n;i++)
     {
         fold.push_back(head->data);

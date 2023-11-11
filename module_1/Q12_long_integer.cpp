@@ -15,6 +15,14 @@ struct node
     }
 };
 // function to insert at beginning
+
+/*
+This function inserts a new node at the beginning of a linked list.
+ It creates a new node with the given data, points the new node to 
+ the current head of the list, and then updates the head to make
+  the new node the beginning of the list.
+*/
+
 void insertAtBeginning(node *&head, int data)
 {
     node *newNode = new node(data);
@@ -22,6 +30,17 @@ void insertAtBeginning(node *&head, int data)
     head = newNode;
 }
 // function to print the linked list
+
+/*
+This function prints the elements of a linked list.
+ It starts from the head of the list and iterates
+  through each node, printing the data it contains.
+   It continues this process until it reaches the end 
+   of the list (where the node points to NULL),
+    printing each node's data along the way.
+*/
+
+
 void printList(node *head)
 {
     while (head != NULL)
@@ -32,6 +51,14 @@ void printList(node *head)
     cout << endl;
 }
 // function to know size of linked list
+
+/*
+This function calculates the size of a linked list by iterating 
+through the nodes, counting each one encountered, and returning 
+the total count of nodes in the list.
+*/
+
+
 int size(node *head)
 {
     int count = 0;
@@ -44,6 +71,17 @@ int size(node *head)
 }
 
 // function to convert int to linkedlist
+
+/*
+This function converts a string of digits into a linked list.
+ It initializes a new node and then, by converting each character 
+ in the string to an integer and inserting it at the beginning of
+  the linked list, constructs the list in reverse order of the
+   digits in the string. The function returns the pointer to
+    the beginning of this linked list.
+*/
+
+
 node *intToLink(string n)
 {
     node *link = new node();
@@ -56,6 +94,17 @@ node *intToLink(string n)
     return link;
 }
 // comparison function for linked list
+
+/*
+This function compares two linked lists by first checking their sizes.
+ If they differ, it determines which list is greater or smaller based
+  on their sizes. If their sizes are the same, it compares the individual
+   nodes, iterating through each list, and determines which list is greater
+    based on the values of their respective nodes. If all nodes match, it
+     concludes that both lists are the same.
+*/
+
+
 void compare(node *a1, node *a2)
 {
     if (size(a1) > size(a2))
