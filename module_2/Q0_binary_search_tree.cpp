@@ -13,6 +13,16 @@ struct node
     }
 };
 // Insertion
+
+/*
+This function inserts a new node with a given value into
+ a binary search tree. If the tree is empty, it creates
+  the node as the root. If not, it traverses the tree,
+   placing the node according to the rules of a binary
+    search tree: smaller values go to the left, and 
+    larger values go to the right.
+*/
+
 void insert(node *&head, int n)
 {
     if (head == NULL)
@@ -29,6 +39,14 @@ void insert(node *&head, int n)
     }
 }
 // Traverse Right
+
+/*
+This function navigates to the rightmost (or maximum) node of 
+a given subtree within a binary search tree. It keeps moving
+ to the right child of each node until it reaches the node with 
+ no right child, indicating the maximum value in the subtree.
+*/
+
 node *traverse_right(node *curr)
 {
     if (curr->right == NULL)
@@ -36,6 +54,17 @@ node *traverse_right(node *curr)
     return traverse_right(curr->right);
 }
 // Deletion
+
+/*
+This function deletes a node with a specified value from
+ a binary search tree. It finds the node with the given 
+ value, then handles three cases: if the node has no 
+ children, if it has one child, or if it has two children.
+  It manages node deletion accordingly, adjusting the tree
+   structure to maintain the binary search tree properties.
+*/
+
+
 void delete_node(node *&root, int key)
 {
     if (root == NULL)
@@ -71,6 +100,15 @@ void delete_node(node *&root, int key)
     }
 }
 // In-order traversal
+
+/*
+This function performs an inorder traversal of a binary search 
+tree. It recursively visits the nodes in the tree in the following
+ order: left subtree, current node, right subtree. It prints the 
+ data of each node in ascending order, following the principles
+  of a binary search tree.
+*/
+
 void inorder(node *root)
 {
     if (root != NULL)
@@ -82,6 +120,14 @@ void inorder(node *root)
 }
 
 // Pre-order traversal
+
+/*
+This function executes a preorder traversal of a binary tree.
+ It traverses the nodes in the tree in the following order: 
+ the current node first, then the left subtree, and finally 
+ the right subtree. It prints the data of each node as it visits them.
+*/
+
 void preorder(node *root)
 {
     if (root != NULL)
@@ -93,6 +139,15 @@ void preorder(node *root)
 }
 
 // Post-order traversal
+
+/*
+This code primarily comprises functions to handle a binary search tree.
+ The postorder, search, and inorder functions are meant for different
+  tree traversals (post-order, searching for a value, and in-order
+   traversal respectively). The main function initiates a binary 
+   search tree with values 5, 2, 7, and 3, then performs an in-order traversal.
+*/
+
 void postorder(node *root)
 {
     if (root != NULL)
