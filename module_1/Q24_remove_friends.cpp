@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*The code takes the number of test cases t.
+For each test case, it takes the number of friends n and the number of friends to delete k.
+It then takes the popularity scores of each friend and uses a deque (dq) to store friends in a way that maximizes the popularity of the remaining friends.
+It iterates through the popularity scores, removing less popular friends from the back of the deque until the desired number (k) is reached.
+Finally, it prints the popularity scores of the remaining friends. The process is repeated for each test case*/
+
 int main() {
     int t;
     cout<<"Number of test cases: ";
