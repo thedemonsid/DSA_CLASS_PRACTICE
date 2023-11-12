@@ -39,18 +39,26 @@ void insert(vector<int>& heap, int n) {
     siftUp(heap, heap.size() - 1);
 }
 
-void deleteMax(vector<int>&heap){
+int deleteMax(vector<int>&heap){
+    int n=heap[0];
     swap(heap[0],heap[heap.size()-1]);
     heap.pop_back();
     heapify(heap,0);
+    return n;
+}
+void heapSort(vector<int>heap){
+    while(!empty(heap)){
+        cout<<deleteMax(heap)<<" ";
+    }
+    cout<<endl;
 }
 int main(){
    vector<int>heap;
      insert(heap,1);
-     insert(heap,2);
-     insert(heap,3);
-     insert(heap,4);
+     insert(heap,22);
+     insert(heap,13);
+     insert(heap,42);
      insert(heap,5);
-     deleteMax(heap);
-     displayHeap(heap);  
+     displayHeap(heap); 
+     heapSort(heap); 
 }
