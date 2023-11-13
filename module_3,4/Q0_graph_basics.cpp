@@ -39,50 +39,93 @@ public:
     }
 };
 
-class graph_list{
-    public :
+class graph_list
+{
+public:
     int n;
-    vector<vector<int>>arr;
-    graph_list(int x){
-        n=x;
-        arr.resize(x+1);
+    vector<vector<int>> arr;
+    graph_list(int x)
+    {
+        n = x;
+        arr.resize(x + 1);
     }
-    void addelement(int u,int v){
-          arr[u].push_back(v);
-          arr[v].push_back(u);
+    void addelement(int u, int v)
+    {
+        arr[u].push_back(v);
+        arr[v].push_back(u);
     }
-    void display(){
-        for(int i=0;i<=n;i++){
-            cout<< i <<" -> ";
-             for(auto v : arr[i]){
-                  cout<< v <<" ";
-             }
-             cout<<endl;
+    void display()
+    {
+        for (int i = 0; i <= n; i++)
+        {
+            cout << i << " -> ";
+            for (auto v : arr[i])
+            {
+                cout << v << " ";
+            }
+            cout << endl;
         }
     }
-    void BFS(int source){
-        bool visited[n+1];
-        for(int i=0;i<=n;i++)visited[i]=false;
+    void BFS(int source)
+    {
+        bool visited[n + 1];
+        for (int i = 0; i <= n; i++)
+            visited[i] = false;
 
-        queue<int>que;
+        queue<int> que;
         que.push(source);
-        visited[source]=true;
-        while(!que.empty()){
+        visited[source] = true;
+        while (!que.empty())
+        {
             int u = que.front();
             que.pop();
-            cout<<u<<" ";
-            for(int i=0;i<arr[u].size();i++){
-                if(visited[arr[u][i]]==false){
+            cout << u << " ";
+            for (int i = 0; i < arr[u].size(); i++)
+            {
+                if (visited[arr[u][i]] == false)
+                {
                     que.push(arr[u][i]);
-                    visited[arr[u][i]]=true;
+                    visited[arr[u][i]] = true;
                 }
             }
         }
-        cout<<endl;
+        cout << endl;
+    }
+    void BFS()
+    {
+        bool visited[n + 1];
+        for (int i = 0; i <= n; i++)
+            visited[i] = false;
+
+        queue<int> que;
+        for (int i = 0; i <= n; i++)
+        {
+            if (visited[i] == false)
+            {
+                visited[i] = true;
+                que.push(i);
+                while (!que.empty())
+                {
+                    int u = que.front();
+                    que.pop();
+                    cout << u << " ";
+                    for (int i = 0; i < arr[u].size(); i++)
+                    {
+                        if (visited[arr[u][i]] == false)
+                        {
+                            que.push(arr[u][i]);
+                            visited[arr[u][i]] = true;
+                        }
+                    }
+                }
+                cout << endl;
+            }
+        }
     }
 };
 
-void testGraphMatrix(){
+void testGraphMatrix()
+{
     int n;
     cout << "Enter the Number of vertices: ";
     cin >> n;
@@ -94,23 +137,25 @@ void testGraphMatrix(){
         cin >> i >> j;
         if (i != (-1) && j != (-1))
         {
-            a->arr[i ][j ] = 1;
+            a->arr[i][j] = 1;
         }
     }
     a->display();
 }
-
-void testGraphList() {
-    graph_list g(5);
+void testGraphList()
+{
+    // Create a graph with 4 vertices and 2 disconnected components
+    graph_list g(4);
     g.addelement(1, 2);
-    g.addelement(1, 3);
-    g.addelement(2, 4);
+    g.addelement(2, 1);
     g.addelement(3, 4);
-    g.addelement(4, 5);
-    cout << "Graph:" << endl;
-    g.display();
-    cout << "BFS traversal from vertex 1:" << endl;
-    g.BFS(1);
+    g.addelement(4, 3);
+
+    // Perform BFS on the disconnected graph
+    cout << "BFS traversal of disconnected graph: ";
+    g.BFS();
+
+    // Expected output: 1 2 3 4
 }
 
 int main()
