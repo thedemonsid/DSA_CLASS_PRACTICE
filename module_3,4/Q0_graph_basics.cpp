@@ -122,6 +122,19 @@ public:
             }
         }
     }
+    void DFS(int source){
+        vector<bool>visited(n+1,false);
+        DFS2(visited,arr[source],source); 
+    }
+    void DFS2(vector<bool>&visited,vector<int>a,int source){
+        cout<<source<<" ";
+        visited[source]=true;
+        for(int i=0;i<a.size();i++){
+            if(visited[a[i]]==false)DFS2(visited,arr[a[i]],a[i]);
+        }
+        return;
+    }
+       
 };
 
 void testGraphMatrix()
@@ -145,11 +158,14 @@ void testGraphMatrix()
 void testGraphList()
 {
     // Create a graph with 4 vertices and 2 disconnected components
-    graph_list g(4);
-    g.addelement(1, 2);
-    g.addelement(2, 1);
-    g.addelement(3, 4);
-    g.addelement(4, 3);
+    graph_list g(5);
+    g.addelement(0, 1);
+    g.addelement(0, 2);
+    g.addelement(1, 3);
+    g.addelement(1, 4);
+    g.addelement(2, 4);
+    g.addelement(3, 5);
+    g.addelement(4, 5);
 
     // Perform BFS on the disconnected graph
     cout << "BFS traversal of disconnected graph: ";
@@ -157,8 +173,26 @@ void testGraphList()
 
     // Expected output: 1 2 3 4
 }
+void testDFS()
+{
+    graph_list g(5);
+    g.addelement(0, 1);
+    g.addelement(0, 2);
+    g.addelement(1, 3);
+    g.addelement(1, 4);
+    g.addelement(2, 4);
+    g.addelement(3, 5);
+    g.addelement(4, 5);
 
+    cout << "DFS traversal starting from vertex 0: ";
+    g.DFS(0);
+    // Expected output: 0 1 3 5 4 2
+
+    cout << "DFS traversal starting from vertex 1: ";
+    g.DFS(1);
+    // Expected output: 1 0 2 4 5 3
+}
 int main()
 {
-    testGraphList();
+    testDFS();
 }
